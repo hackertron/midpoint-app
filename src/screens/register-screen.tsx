@@ -38,17 +38,15 @@ export function RegisterScreen() {
     handleSubmit,
     formState: { errors },
     clearErrors,
-    watch,
   } = useForm<RegisterFormData>({
     resolver: zodResolver(registerSchema),
     mode: 'onChange',
   });
 
-  const password = watch('password');
-
   const onSubmit = async (data: RegisterFormData) => {
     setIsLoading(true);
     try {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { confirmPassword, ...registerData } = data;
       await authService.register(registerData);
       router.replace('/(tabs)');
@@ -63,7 +61,7 @@ export function RegisterScreen() {
     }
   };
 
-  const handleInputChange = (field: keyof RegisterFormData) => (text: string) => {
+  const handleInputChange = (field: keyof RegisterFormData) => (_text: string) => {
     if (errors[field]) {
       clearErrors(field);
     }

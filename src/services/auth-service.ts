@@ -46,7 +46,7 @@ export class AuthService {
   async logout(): Promise<void> {
     try {
       await SecureStore.deleteItemAsync(AUTH_TOKEN_KEY);
-    } catch (error) {
+    } catch {
       // Silently handle case where token doesn't exist
       console.warn('No token to delete during logout');
     }
@@ -55,7 +55,7 @@ export class AuthService {
   async getStoredToken(): Promise<string | null> {
     try {
       return await SecureStore.getItemAsync(AUTH_TOKEN_KEY);
-    } catch (error) {
+    } catch {
       return null;
     }
   }

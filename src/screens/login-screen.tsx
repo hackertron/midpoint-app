@@ -54,7 +54,7 @@ export function LoginScreen() {
     }
   };
 
-  const handleInputChange = (field: keyof LoginFormData) => (text: string) => {
+  const handleInputChange = (field: keyof LoginFormData) => (_text: string) => {
     if (errors[field]) {
       clearErrors(field);
     }

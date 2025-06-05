@@ -30,7 +30,7 @@ jest.mock('expo-router', () => ({
     setParams: jest.fn(),
   })),
   useLocalSearchParams: jest.fn(() => ({})),
-  Link: ({ children, ...props }: any) => children,
+  Link: ({ children, ..._props }: any) => children,
 }));
 
 // Mock React Native Maps
@@ -40,9 +40,9 @@ jest.mock('react-native-maps', () => {
   
   return {
     __esModule: true,
-    default: React.forwardRef((props: any, ref: any) => React.createElement(View, props)),
-    Marker: React.forwardRef((props: any, ref: any) => React.createElement(View, props)),
-    Callout: React.forwardRef((props: any, ref: any) => React.createElement(View, props)),
+    default: React.forwardRef((props: any, _ref: any) => React.createElement(View, props)),
+    Marker: React.forwardRef((props: any, _ref: any) => React.createElement(View, props)),
+    Callout: React.forwardRef((props: any, _ref: any) => React.createElement(View, props)),
   };
 });
 
