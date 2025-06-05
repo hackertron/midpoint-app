@@ -1,18 +1,9 @@
 module.exports = {
-  preset: 'ts-jest',
-  testEnvironment: 'jsdom',
+  preset: 'react-native',
   setupFilesAfterEnv: ['<rootDir>/src/__tests__/setup.ts'],
   testMatch: ['**/__tests__/**/*.(test|spec).(js|jsx|ts|tsx)'],
   transform: {
-    '^.+\\.(ts|tsx)$': [
-      'ts-jest',
-      {
-        tsconfig: {
-          jsx: 'react-jsx',
-        },
-      },
-    ],
-    '^.+\\.(js|jsx)$': 'babel-jest',
+    '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   transformIgnorePatterns: [
@@ -21,8 +12,6 @@ module.exports = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
-    '^react-native$': 'react-native-web',
-    '^react-native/(.+)': 'react-native-web/dist/$1',
   },
   collectCoverageFrom: [
     'src/**/*.{ts,tsx}',
