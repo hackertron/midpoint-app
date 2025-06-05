@@ -36,8 +36,10 @@
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/preset-typescript": "^7.27.1",
+    "@eslint/js": "^9.28.0",
     "@jest/core": "^29.7.0",
     "@react-native-async-storage/async-storage": "^2.2.0",
+    "@react-native/metro-config": "^0.79.3",
     "@testing-library/jest-native": "^5.4.3",
     "@testing-library/react-native": "^12.9.0",
     "@types/jest": "^29.5.14",
